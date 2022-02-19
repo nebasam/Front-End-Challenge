@@ -3,12 +3,10 @@
 
 import { CssBaseline, PaletteMode, Toolbar } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/core/styles";
-import { Action, Update } from "history";
 import * as React from "react";
 import { Environment, RelayEnvironmentProvider } from "react-relay";
 import { History, HistoryContext, LocationContext } from "../core/history";
 import type { RouteResponse } from "../core/router";
-import { resolveRoute } from "../core/router";
 import { LoginDialog } from "../dialogs";
 import Home from "../pages/home Page/home Page.component";
 import theme from "../theme";
@@ -38,8 +36,8 @@ export class App extends React.Component<AppProps> {
 
   componentDidMount(): void {
     const { history } = this.props;
-    this.dispose = history.listen(this.renderPath);
-    this.renderPath({ location: history.location, action: Action.Pop });
+    // this.dispose = history.listen(this.renderPath);
+    // this.renderPath({ location: history.location, action: Action.Pop });
   }
 
   componentDidUpdate(): void {
@@ -57,15 +55,15 @@ export class App extends React.Component<AppProps> {
     console.error(error, errorInfo);
   }
 
-  renderPath = async (ctx: Update): Promise<void> => {
-    resolveRoute({
-      path: ctx.location.pathname,
-      relay: this.props.relay,
-    }).then((route) => {
-      if (route.error) console.error(route.error);
-      this.setState({ route, location: ctx.location, error: route.error });
-    });
-  };
+  // renderPath = async (ctx: Update): Promise<void> => {
+  //   resolveRoute({
+  //     path: ctx.location.pathname,
+  //     relay: this.props.relay,
+  //   }).then((route) => {
+  //     if (route.error) console.error(route.error);
+  //     this.setState({ route, location: ctx.location, error: route.error });
+  //   });
+  // };
 
   handleChangeTheme = (): void => {
     this.setState((x: { theme: PaletteMode }) => {

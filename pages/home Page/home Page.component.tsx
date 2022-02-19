@@ -1,11 +1,22 @@
-import React from 'react'
+import React from "react";
+import Display from "../../components/Display/pdf.component";
+import RightPane from "../../components/RightPane/rightPane.component";
 
-const home = () => {
+function Home() {
   return (
-    <div>
-      
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        flexDirection: "row",
+        // justifyContent: "space-between",
+      }}
+    >
+      {/* <h1>Home Page!</h1> */}
+      <Display style={{}} />
+      <RightPane style={{}} />
     </div>
-  )
+  );
 }
 
-export default home
+export default Home;
