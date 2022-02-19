@@ -10,6 +10,7 @@ import { History, HistoryContext, LocationContext } from "../core/history";
 import type { RouteResponse } from "../core/router";
 import { resolveRoute } from "../core/router";
 import { LoginDialog } from "../dialogs";
+import Home from "../pages/home Page/home Page.component";
 import theme from "../theme";
 import { AppToolbar } from "./AppToolbar";
 import { ErrorPage } from "./ErrorPage";
@@ -94,6 +95,7 @@ export class App extends React.Component<AppProps> {
               <CssBaseline />
               <AppToolbar onChangeTheme={this.handleChangeTheme} />
               <Toolbar />
+              <Home />
               {route?.component
                 ? React.createElement(route.component, route.props)
                 : null}
