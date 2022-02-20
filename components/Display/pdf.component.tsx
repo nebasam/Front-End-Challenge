@@ -1,5 +1,6 @@
-import "@react-pdf-viewer/core/lib/styles/index.css";
+// import "@react-pdf-viewer/core/lib/styles/index.css";
 import React, { useEffect, useState } from "react";
+import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
 import img from "../../public/assets/noFilesAttached.jpeg";
 
 const Pdf = (props) => {
@@ -9,6 +10,26 @@ const Pdf = (props) => {
       setFile(props.zFile);
     }
   }, [props.zFile]);
+
+  const [numPages, setNumPages] = useState(null);
+  const [pageNumber, setPageNumber] = useState(1);
+
+  function onDocumentLoadSuccess({ numPages }) {
+    setNumPages(numPages);
+    setPageNumber(1);
+  }
+
+  function changePage(offset) {
+    setPageNumber((prevPageNumber) => prevPageNumber + offset);
+  }
+
+  function changePageBack() {
+    changePage(-1);
+  }
+
+  function changePageNext() {
+    changePage(+1);
+  }
 
   const [file, setFile] = useState(null);
 
@@ -22,11 +43,21 @@ const Pdf = (props) => {
         alignItems: "center",
       }}
     >
-      {/* <h1>Hello PDF PAge</h1> */}
       {file ? (
-        // "<h1>WOW FILE.</h1>"
-        // console.log("Here also?")
-        <h1>The file displayed</h1>
+        <>
+          {/* <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.12.313/build/pdf.worker.min.js">
+            <Viewer fileUrl={file} plugins={[defaultLayoutPluginInstance]} />
+          </Worker> */}
+          <Document file={file} onLoadSuccess={onDocumentLoadSuccess}>
+            <Page height="600" pageNumber={pageNumber} />
+          </Document>
+          <p>
+            Page {pageNumber} of {numPages}
+          </p>
+          {pageNumber > 1 && <button onClick={changePageBack} >Previous Page</button>}
+          {pageNumber < numPages  && <button onClick={changePageNext} >Next Page</button>}
+        
+        </>
       ) : (
         <div
           style={{

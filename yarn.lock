@@ -2829,6 +2829,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react-pdf@npm:^5":
+  version: 5.0.9
+  resolution: "@types/react-pdf@npm:5.0.9"
+  dependencies:
+    "@types/react": "*"
+    pdfjs-dist: ^2.10.377
+  checksum: 17ab90e7f8074061886d5f0011f9536bdac4dacc625dcadb10bbaf1f31733b5193efb580e4f1e3e79a301536b4a7092fdeba2daca1481bc8f2e8ac210d09fba1
+  languageName: node
+  linkType: hard
+
 "@types/react-relay@npm:^11.0.1":
   version: 11.0.1
   resolution: "@types/react-relay@npm:11.0.1"
@@ -3796,6 +3806,7 @@ __metadata:
     "@types/prettier": ^2.2.3
     "@types/react": ^17.0.39
     "@types/react-dom": ^17.0.11
+    "@types/react-pdf": ^5
     "@types/react-relay": ^11.0.1
     "@types/relay-runtime": ^11.0.0
     "@types/terser-webpack-plugin": ^5.0.3
@@ -3836,6 +3847,7 @@ __metadata:
     prettier: ^2.3.0
     react: ^17.0.2
     react-dom: ^17.0.2
+    react-pdf: ^5.7.1
     react-refresh: ^0.10.0
     react-relay: ^11.0.2
     react-spinners: ^0.11.0
@@ -6389,6 +6401,18 @@ __metadata:
   dependencies:
     flat-cache: ^3.0.4
   checksum: af83a412143100405a995bb7d9a31982ebcfabe6c545dac2e787fc5580b2da74e253ef62968057fa5bbfaf0811a8b85623aeea776e16c77e3ce4c2488b0e4821
+  languageName: node
+  linkType: hard
+
+"file-loader@npm:^6.0.0":
+  version: 6.2.0
+  resolution: "file-loader@npm:6.2.0"
+  dependencies:
+    loader-utils: ^2.0.0
+    schema-utils: ^3.0.0
+  peerDependencies:
+    webpack: ^4.0.0 || ^5.0.0
+  checksum: 0f103418c072ec66c081a9908cd7824ee19905e18be16889cb050f5f373998afaf7ca4c2fd2df4cabf703a2cd526aefe59105930e3f8d266a5b35e6d5f5b3cf4
   languageName: node
   linkType: hard
 
@@ -9075,6 +9099,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"make-cancellable-promise@npm:^1.0.0":
+  version: 1.1.0
+  resolution: "make-cancellable-promise@npm:1.1.0"
+  checksum: 985ec3002fc7ee325fbae584bb7ea2419ae770005b9447feb74cf93a0e640ef54ce6a251f6de702b27e0c760d9060d6229135546dd8172849ad650651ae687bf
+  languageName: node
+  linkType: hard
+
 "make-dir@npm:^2.0.0, make-dir@npm:^2.1.0":
   version: 2.1.0
   resolution: "make-dir@npm:2.1.0"
@@ -9091,6 +9122,13 @@ fsevents@^1.2.7:
   dependencies:
     semver: ^6.0.0
   checksum: 54b6f186c209c1b133d0d1710e6b04c41ebfcb0dac699e5a369ea1223f22c0574ef820b91db37cae6c245f5bda8aff9bfec94f6c23e7d75970446b34a58a79b0
+  languageName: node
+  linkType: hard
+
+"make-event-props@npm:^1.1.0":
+  version: 1.3.0
+  resolution: "make-event-props@npm:1.3.0"
+  checksum: 88eacd0c520f9d42d9c79608b9c1b04cbb2bd92901e5c9cd3f58154a119b54e81d99560cc2ac631c10436d04a91ec5ba239b474999f28538597f02ecf835cfea
   languageName: node
   linkType: hard
 
@@ -9192,10 +9230,24 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"merge-class-names@npm:^1.1.1":
+  version: 1.4.2
+  resolution: "merge-class-names@npm:1.4.2"
+  checksum: b97781a434bf19268eaf8f32ee6f827be420a1ca1767c9f5e26a352871c2fd297a01b401ed65686746ba351b50482ee7ca7be8b8c05ae1e265e6755594ed1747
+  languageName: node
+  linkType: hard
+
 "merge-descriptors@npm:1.0.1":
   version: 1.0.1
   resolution: "merge-descriptors@npm:1.0.1"
   checksum: 2d2a09eaac840a7ceac7a13b44b7c8abf3ecccd93a609c3525d8290cb5d814336cc7c0b1dd485ae3bc471ed354eeefb153475ce2e1604ccdf79eebe74021c192
+  languageName: node
+  linkType: hard
+
+"merge-refs@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "merge-refs@npm:1.0.0"
+  checksum: 75e0b1a301e3ac9f057e4f4f8fc5c286af169e5cc7afc0786653ee7e7d338b8756c6b10a934793dfb80a9fbdb7bf2b002ddb173b0106329dfcf27909550a62fc
   languageName: node
   linkType: hard
 
@@ -10200,6 +10252,18 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"pdfjs-dist@npm:2.12.313, pdfjs-dist@npm:^2.10.377":
+  version: 2.12.313
+  resolution: "pdfjs-dist@npm:2.12.313"
+  peerDependencies:
+    worker-loader: ^3.0.8
+  peerDependenciesMeta:
+    worker-loader:
+      optional: true
+  checksum: 9c735fac006d6a9a4f50c181ebbc8a7f2ba7e36ee52baed3727922ec02834b714d2bf97886c1fa5da9170808faf9456ccab9726eaf0b411a0fc58dccf462f08e
+  languageName: node
+  linkType: hard
+
 "peek-readable@npm:^3.1.3":
   version: 3.1.3
   resolution: "peek-readable@npm:3.1.3"
@@ -10577,6 +10641,27 @@ fsevents@^1.2.7:
   version: 17.0.2
   resolution: "react-is@npm:17.0.2"
   checksum: 3eff23f410d40ab9bc5177f147a92c7f42c356a21ecea340e0554566956d67e5e1ba56f26cc7fa22339ac3c7151744177bd6305eaa26d3cbf15f354358c9d9b6
+  languageName: node
+  linkType: hard
+
+"react-pdf@npm:^5.7.1":
+  version: 5.7.1
+  resolution: "react-pdf@npm:5.7.1"
+  dependencies:
+    "@babel/runtime": ^7.0.0
+    file-loader: ^6.0.0
+    make-cancellable-promise: ^1.0.0
+    make-event-props: ^1.1.0
+    merge-class-names: ^1.1.1
+    merge-refs: ^1.0.0
+    pdfjs-dist: 2.12.313
+    prop-types: ^15.6.2
+    tiny-invariant: ^1.0.0
+    tiny-warning: ^1.0.0
+  peerDependencies:
+    react: ^16.3.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.3.0 || ^17.0.0 || ^18.0.0
+  checksum: c5b0bfe7f2cfe17ee0628b0c17545f3f857c6d03730ffe764c74699f596f80d4702fde14c13035b3116e579060c5aa7ad6910de00f0fb3f113f7e0a7d3396ade
   languageName: node
   linkType: hard
 
@@ -12158,7 +12243,14 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"tiny-warning@npm:^1.0.2":
+"tiny-invariant@npm:^1.0.0":
+  version: 1.2.0
+  resolution: "tiny-invariant@npm:1.2.0"
+  checksum: 101ae6dd08d4a26fb81788de6266e345da687de905b6a4c55f372ba8405d3cb5826208863a9c8ce42efb3a031f82fa1317787023fc9dccc562bb7be27f81dc7c
+  languageName: node
+  linkType: hard
+
+"tiny-warning@npm:^1.0.0, tiny-warning@npm:^1.0.2":
   version: 1.0.3
   resolution: "tiny-warning@npm:1.0.3"
   checksum: 6cf9f66cb765b893976b8cd1c1310338861f30fb04d02ef2c8e0a748cbc2ed5acd8bb1954b78c15f640ad4116def67134d7d705f2a0c9bf27e6e2eb3e92bff29
