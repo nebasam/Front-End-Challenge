@@ -51,31 +51,28 @@ const RightPane = () => {
           endAdornment: <InputAdornment position="end">/4</InputAdornment>,
         }}
       />{" "}
-      <ButtonGroup
-        variant="contained"
-        aria-label="outlined primary button group"
-      >
-        <Button
-          size="small"
-          style={{ margin: 4, padding: "0.7rem 2rem" }}
+      <ToggleButtonGroup color="primary" value="" exclusive>
+        <ToggleButton
           value="4"
-        />
-        <Button
           size="small"
           style={{ margin: 4, padding: "0.7rem 2rem" }}
+        ></ToggleButton>
+        <ToggleButton
           value="3"
-        />
-        <Button
           size="small"
           style={{ margin: 4, padding: "0.7rem 2rem" }}
+        ></ToggleButton>
+        <ToggleButton
           value="2"
-        />
-        <Button
           size="small"
           style={{ margin: 4, padding: "0.7rem 2rem" }}
+        ></ToggleButton>
+        <ToggleButton
           value="1"
-        />
-      </ButtonGroup>
+          size="small"
+          style={{ margin: 4, padding: "0.7rem 2rem" }}
+        ></ToggleButton>
+      </ToggleButtonGroup>
       <hr width="100%" />
       <h5>Clarity and Clearness</h5>
       <TextField
@@ -128,7 +125,6 @@ const RightPane = () => {
         multiline
         rows={2}
         placeholder="Add Private Comment"
-
       />
       <Button variant="contained" style={{ width: 1, marginTop: "6px" }}>
         Post
