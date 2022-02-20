@@ -75,7 +75,7 @@
     "resolveJsonModule": true                       /* Allow for importing, extracting types from and generating .json files */
   },
   "exclude": [
-    ".build/**/*",
+    "build/**/*",
     ".cache/**/*",
     ".yarn/**/*"
   ]

@@ -7,7 +7,7 @@
 export const local = {
   // Core application settings
   app: {
-    name: "React App",
+    name: "TenX Learning System",
     origin: "http://localhost:3000",
     env: "local" as "local" | "test" | "prod",
   },
