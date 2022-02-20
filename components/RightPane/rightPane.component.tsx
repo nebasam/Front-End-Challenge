@@ -11,14 +11,16 @@ const Input = styled("input")({
   display: "none",
 });
 
-const RightPane = () => {
+const RightPane = (props) => {
   const classes = useStyles();
 
   // const classes = useStyles();
   const [field1, setField1] = React.useState();
   const [field2, setField2] = React.useState();
   const [field3, setField3] = React.useState();
-  // let [loading, setLoading] = useState(false);
+  const [file, setFile] = React.useState(null);
+
+  let [loading, setLoading] = useState(false);
 
   const handleChange = (event, newAlignment) => {
     setField1(newAlignment);
@@ -28,6 +30,26 @@ const RightPane = () => {
   };
   const handleChange3 = (event, newAlignment) => {
     setField3(newAlignment);
+  };
+  const fileType = ["application/pdf"];
+  const handleFileChange = (e: any) => {
+    let selectedFile = e.target.files[0];
+    if (selectedFile) {
+      if (selectedFile && fileType.includes(selectedFile.type)) {
+        let reader = new FileReader();
+        reader.readAsDataURL(selectedFile);
+        reader.onloadend = (e) => {
+          setFile(e.target?.result);
+          props.func(e.target?.result);
+          // setPdfFileError("");
+        };
+      } else {
+        setFile(null);
+        // setPdfFileError("Please select valid pdf file");
+      }
+    } else {
+      console.log("select your file");
+    }
   };
 
   return (
@@ -44,14 +66,19 @@ const RightPane = () => {
       <a href="" className={classes.link}>
         See history
       </a>
-      {/* <input type="file" name="upload" id="file-select" /> */}
-      <label htmlFor="contained-button-file">
+      <input
+        type="file"
+        name="upload"
+        id="file-select"
+        onChange={handleFileChange}
+      />
+      {/* <label htmlFor="contained-button-file">
         <p className={classes.p}>No files attached</p>
         <Input accept="*" id="contained-button-file" multiple type="file" />
-        {/* <Button variant="contained" component="span">
+        <Button variant="contained" component="span">
           Upload
-        </Button> */}
-      </label>
+        </Button>
+      </label> */}
       <hr width="100%" />
       <h5 className={classes.h5}>Mark</h5>
       <TextField
