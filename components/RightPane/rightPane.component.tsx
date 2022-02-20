@@ -18,7 +18,7 @@ const RightPane = () => {
   const [field1, setField1] = React.useState();
   const [field2, setField2] = React.useState();
   const [field3, setField3] = React.useState();
-  let [loading, setLoading] = useState(false);
+  // let [loading, setLoading] = useState(false);
 
   const handleChange = (event, newAlignment) => {
     setField1(newAlignment);

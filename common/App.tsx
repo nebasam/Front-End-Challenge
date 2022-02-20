@@ -8,7 +8,7 @@ import { Environment, RelayEnvironmentProvider } from "react-relay";
 import { History, HistoryContext, LocationContext } from "../core/history";
 import type { RouteResponse } from "../core/router";
 import { LoginDialog } from "../dialogs";
-import Home from "../pages/home Page/home Page.component";
+import Home from "../pages/homePage/homePage.component";
 import theme from "../theme";
 import { AppToolbar } from "./AppToolbar";
 import { ErrorPage } from "./ErrorPage";
