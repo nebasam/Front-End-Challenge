@@ -19,17 +19,17 @@ const Pdf = (props) => {
     setPageNumber(1);
   }
 
-  function changePage(offset) {
-    setPageNumber((prevPageNumber) => prevPageNumber + offset);
-  }
+  // function changePage(offset) {
+  //   setPageNumber((prevPageNumber) => prevPageNumber + offset);
+  // }
 
-  function changePageBack() {
-    changePage(-1);
-  }
+  // function changePageBack() {
+  //   changePage(-1);
+  // }
 
-  function changePageNext() {
-    changePage(+1);
-  }
+  // function changePageNext() {
+  //   changePage(+1);
+  // }
 
   const [file, setFile] = useState(null);
 
@@ -48,15 +48,19 @@ const Pdf = (props) => {
           {/* <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.12.313/build/pdf.worker.min.js">
             <Viewer fileUrl={file} plugins={[defaultLayoutPluginInstance]} />
           </Worker> */}
-          <Document file={file} onLoadSuccess={onDocumentLoadSuccess}>
+          {/* <Document file={file} onLoadSuccess={onDocumentLoadSuccess}>
             <Page height="600" pageNumber={pageNumber} />
           </Document>
           <p>
             Page {pageNumber} of {numPages}
           </p>
           {pageNumber > 1 && <button onClick={changePageBack} >Previous Page</button>}
-          {pageNumber < numPages  && <button onClick={changePageNext} >Next Page</button>}
-        
+          {pageNumber < numPages  && <button onClick={changePageNext} >Next Page</button>} */}
+          <Document file={file} onLoadSuccess={onDocumentLoadSuccess}>
+            {Array.from(new Array(numPages), (el, index) => (
+              <Page key={`page_${index + 1}`} pageNumber={index + 1} />
+            ))}
+          </Document>
         </>
       ) : (
         <div
