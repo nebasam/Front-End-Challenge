@@ -22,7 +22,7 @@ const RightPane = (props) => {
   const [field3, setField3] = React.useState("");
   const [file, setFile] = React.useState(null);
 
-  let [loading, setLoading] = useState(false);
+  let [loading, setLoading] = useState(false); //un-used load spinner
 
   const handleChange = (event, newAlignment) => {
     setField1(newAlignment);
@@ -32,6 +32,19 @@ const RightPane = (props) => {
   };
   const handleChange3 = (event, newAlignment) => {
     setField3(newAlignment);
+  };
+
+  const handleField1 = (e) => {
+    console.log(e)
+    setField1(e.target.value);
+  };
+  const handleField2 = (e) => {
+    console.log(e)
+    setField2(e.target.value);
+  };
+  const handleField3 = (e) => {
+    console.log(e)
+    setField3(e.target.value);
   };
 
   const handleSubmit = (e) => {
@@ -122,9 +135,11 @@ const RightPane = (props) => {
           sx={{ m: 1, width: "25ch" }}
           variant="outlined"
           value={field1}
+          onChange={handleField1}
           InputProps={{
             inputMode: "numeric",
             pattern: "[0-9]*",
+            "aria-label": "weight",
             endAdornment: <InputAdornment position="end">/4</InputAdornment>,
           }}
         />{" "}
@@ -176,9 +191,11 @@ const RightPane = (props) => {
           sx={{ m: 1, width: "25ch" }}
           variant="outlined"
           value={field2}
+          onChange={handleField2}
           InputProps={{
             inputMode: "numeric",
             pattern: "[0-9]*",
+            
             endAdornment: <InputAdornment position="end">/4</InputAdornment>,
           }}
         />
@@ -230,9 +247,11 @@ const RightPane = (props) => {
           sx={{ m: 1, width: "25ch" }}
           variant="outlined"
           value={field3}
+          onChange={handleField3}
           InputProps={{
             inputMode: "numeric",
             pattern: "[0-9]*",
+            "aria-label": "weight",
             endAdornment: <InputAdornment position="end">/3</InputAdornment>,
           }}
         />

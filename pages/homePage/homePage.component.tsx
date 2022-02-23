@@ -4,6 +4,7 @@ import RightPane from "../../components/RightPane/rightPane.component";
 
 function Home() {
   const [file, setFile] = React.useState();
+ 
   const setFileData = (data) => {
     console.log("Wow Came here!");
     console.log("The data: ", data);
