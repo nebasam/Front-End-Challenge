@@ -117,6 +117,7 @@ const RightPane = (props) => {
           id="outlined-basic"
           sx={{ m: 1, width: "18ch", height: "5ch" }}
           variant="outlined"
+          value= {(((parseInt(field1) || 0) + (parseInt(field2) || 0) + (parseInt(field3) || 0))*100)/11}
           InputProps={{
             inputMode: "numeric",
             pattern: "[0-9]*",
