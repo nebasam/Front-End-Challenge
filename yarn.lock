@@ -1412,7 +1412,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.17.0":
+"@babel/runtime@npm:^7.15.4, @babel/runtime@npm:^7.17.0, @babel/runtime@npm:^7.9.2":
   version: 7.17.2
   resolution: "@babel/runtime@npm:7.17.2"
   dependencies:
@@ -2663,6 +2663,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/hoist-non-react-statics@npm:^3.3.0":
+  version: 3.3.1
+  resolution: "@types/hoist-non-react-statics@npm:3.3.1"
+  dependencies:
+    "@types/react": "*"
+    hoist-non-react-statics: ^3.3.0
+  checksum: 16ab4c45d4920fa378c8be76554b10061247fc04d2c8af11bdb7d520b3967e9c06d7ad5efd9b0f1657fbc4d095f62c6e1325f03b9141eb1ef2c8095b96fd42f8
+  languageName: node
+  linkType: hard
+
 "@types/html-minifier-terser@npm:^5.0.0":
   version: 5.1.1
   resolution: "@types/html-minifier-terser@npm:5.1.1"
@@ -2836,6 +2846,18 @@ __metadata:
     "@types/react": "*"
     pdfjs-dist: ^2.10.377
   checksum: 17ab90e7f8074061886d5f0011f9536bdac4dacc625dcadb10bbaf1f31733b5193efb580e4f1e3e79a301536b4a7092fdeba2daca1481bc8f2e8ac210d09fba1
+  languageName: node
+  linkType: hard
+
+"@types/react-redux@npm:^7, @types/react-redux@npm:^7.1.20":
+  version: 7.1.22
+  resolution: "@types/react-redux@npm:7.1.22"
+  dependencies:
+    "@types/hoist-non-react-statics": ^3.3.0
+    "@types/react": "*"
+    hoist-non-react-statics: ^3.3.0
+    redux: ^4.0.0
+  checksum: a260afe024362f4e633c70d94d371f06bd1e607cc68e6c0b17d581c4b722726942b8d853720900379564aecbd47803d30ed2f1faa4b697a4a01146c108d1677b
   languageName: node
   linkType: hard
 
@@ -3807,6 +3829,7 @@ __metadata:
     "@types/react": ^17.0.39
     "@types/react-dom": ^17.0.11
     "@types/react-pdf": ^5
+    "@types/react-redux": ^7
     "@types/react-relay": ^11.0.1
     "@types/relay-runtime": ^11.0.0
     "@types/terser-webpack-plugin": ^5.0.3
@@ -3848,9 +3871,12 @@ __metadata:
     react: ^17.0.2
     react-dom: ^17.0.2
     react-pdf: ^5.7.1
+    react-redux: ^7.2.6
     react-refresh: ^0.10.0
     react-relay: ^11.0.2
     react-spinners: ^0.11.0
+    redux: ^4.1.2
+    redux-devtools-extension: ^2.13.9
     relay-compiler: ^11.0.2
     relay-compiler-language-typescript: ^14.0.0
     relay-config: ^11.0.2
@@ -7041,7 +7067,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"hoist-non-react-statics@npm:^3.3.1, hoist-non-react-statics@npm:^3.3.2":
+"hoist-non-react-statics@npm:^3.3.0, hoist-non-react-statics@npm:^3.3.1, hoist-non-react-statics@npm:^3.3.2":
   version: 3.3.2
   resolution: "hoist-non-react-statics@npm:3.3.2"
   dependencies:
@@ -10665,6 +10691,27 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"react-redux@npm:^7.2.6":
+  version: 7.2.6
+  resolution: "react-redux@npm:7.2.6"
+  dependencies:
+    "@babel/runtime": ^7.15.4
+    "@types/react-redux": ^7.1.20
+    hoist-non-react-statics: ^3.3.2
+    loose-envify: ^1.4.0
+    prop-types: ^15.7.2
+    react-is: ^17.0.2
+  peerDependencies:
+    react: ^16.8.3 || ^17
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
+    react-native:
+      optional: true
+  checksum: 32952c3fa1fbc12a28e93a6a116f320319c3d82ded71af053e7d405d760e96bccbc1d939ad06848ed6f088819d490f3180a31975c53ce23248934de906f2b27c
+  languageName: node
+  linkType: hard
+
 "react-refresh@npm:^0.10.0":
   version: 0.10.0
   resolution: "react-refresh@npm:0.10.0"
@@ -10834,6 +10881,24 @@ fsevents@^1.2.7:
     indent-string: ^4.0.0
     strip-indent: ^3.0.0
   checksum: 78c8aa0a1076f47e0e198bfc8a9aa7d4ae3163c6951bd5de1015e47661bba62ea36573337bbeb4b309b48cc71954edbe43ae4aa3163db1996a781b757c5c47d7
+  languageName: node
+  linkType: hard
+
+"redux-devtools-extension@npm:^2.13.9":
+  version: 2.13.9
+  resolution: "redux-devtools-extension@npm:2.13.9"
+  peerDependencies:
+    redux: ^3.1.0 || ^4.0.0
+  checksum: ed3d28384887b38f4ed7471bd1f47fffe9d6798eca87d0db7cff115a90a6618780ab9a3a14ce6b9a27633abda6b48fb386a1d63bd182e6658648475399ff7af9
+  languageName: node
+  linkType: hard
+
+"redux@npm:^4.0.0, redux@npm:^4.1.2":
+  version: 4.1.2
+  resolution: "redux@npm:4.1.2"
+  dependencies:
+    "@babel/runtime": ^7.9.2
+  checksum: 39aba0fc41c0187cb46b38e52dcb9dc039b785cae772bad9c30cd1d24c67942739285fc013bf804d286aad3c660c1d74cdab5923e1c1535839c5f996d1491365
   languageName: node
   linkType: hard
 
