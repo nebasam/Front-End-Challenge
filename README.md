@@ -17,5 +17,9 @@ components
   |____pdf.component.tsx       # A components that displays the uploaded pdf. If there is no pdf it displays an image showing that no image is displayed 
 |___RightPane
   |____rightPane.component.tsx #  A component that holds all the elements of the input box from the user as well as the file upload functionality. It will then pass the uploaded file to the left panel to be displayed
+  |____TextField.tsx           # A component that dispaly input textfields
+  |____Toogle button group.tsx           # A component that dispaly selector for each fields
   |____rightPane.ts
+|___reducers
+  |____rootReducer.ts          # A function for changing multiple states
 ```

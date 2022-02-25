@@ -9,14 +9,16 @@ export const Toogle = (props: any) => {
 
   const classes = useStyles();
   let numberOfButton = Array.from(Array(props.numberOfChildren).keys())
-  const children = [ numberOfButton.map(num => <ToggleButton
-    classes={{
+  const children = [ 
+    numberOfButton.map(num => 
+    <ToggleButton
+      classes={{
       selected: classes.toggleButton,
     }}
     value={`${props.numberOfChildren-num}`}
     size="small"
     className={classes.toggle}
-  ></ToggleButton> )
+   ></ToggleButton> )
     
   ];
   return (
