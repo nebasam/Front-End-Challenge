@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import data from "../../data/data.json";
 import { useStyles } from "./rightPane";
 import Text from "./TextField";
-import { Toogle, Toogle1 } from "./Toogle button group";
+import { Toogle, Toogle1 } from "./ToogleButtonGroup";
 
 const RightPane = (props) => {
   const field1 = useSelector((state) => state.field1);
