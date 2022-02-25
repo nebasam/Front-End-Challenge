@@ -8,7 +8,17 @@ export const Toogle = (props: any) => {
   const dispatch = useDispatch();
 
   const classes = useStyles();
-
+  let numberOfButton = Array.from(Array(props.numberOfChildren).keys())
+  const children = [ numberOfButton.map(num => <ToggleButton
+    classes={{
+      selected: classes.toggleButton,
+    }}
+    value={`${props.numberOfChildren-num}`}
+    size="small"
+    className={classes.toggle}
+  ></ToggleButton> )
+    
+  ];
   return (
     <ToggleButtonGroup
       name={props.name}
@@ -17,77 +27,7 @@ export const Toogle = (props: any) => {
       exclusive
       onChange={(event, val) => dispatch({ type: props.name, payload: val })}
     >
-      <ToggleButton
-        classes={{
-          selected: classes.toggleButton,
-        }}
-        value="4"
-        size="small"
-        className={classes.toggle}
-      ></ToggleButton>
-      <ToggleButton
-        classes={{
-          selected: classes.toggleButton,
-        }}
-        value="3"
-        size="small"
-        className={classes.toggle}
-      ></ToggleButton>
-      <ToggleButton
-        classes={{
-          selected: classes.toggleButton,
-        }}
-        value="2"
-        size="small"
-        className={classes.toggle}
-      ></ToggleButton>
-      <ToggleButton
-        classes={{
-          selected: classes.toggleButton,
-        }}
-        value="1"
-        size="small"
-        className={classes.toggle}
-      ></ToggleButton>
-    </ToggleButtonGroup>
-  );
-};
-export const Toogle1 = (props: any) => {
-  const dispatch = useDispatch();
-
-  const classes = useStyles();
-  return (
-    <ToggleButtonGroup
-      name={props.name}
-      color="primary"
-      value={props.value}
-      exclusive
-      onChange={(event, val) => dispatch({ type: props.name, payload: val })}
-    >
-      <ToggleButton
-        classes={{
-          selected: classes.toggleButton,
-        }}
-        value="3"
-        size="small"
-        className={classes.toggle}
-      ></ToggleButton>
-      <ToggleButton
-        classes={{
-          selected: classes.toggleButton,
-        }}
-        value="2"
-        size="small"
-        className={classes.toggle}
-      ></ToggleButton>
-      <ToggleButton
-        classes={{
-          selected: classes.toggleButton,
-        }}
-        value="1"
-        size="small"
-        className={classes.toggle}
-      ></ToggleButton>
-    </ToggleButtonGroup>
+      {children}
+      </ToggleButtonGroup>
   );
 };

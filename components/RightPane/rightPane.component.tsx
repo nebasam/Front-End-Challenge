@@ -75,15 +75,15 @@ const RightPane = (props) => {
           Review and send{" "}
         </a>
         <Text name="send" value={field1} sign="/4" />
-        <Toogle name="send" value={field1} />
+        <Toogle name="send" value={field1} numberOfChildren={4}/>
         <hr width="100%" />
         <a className={classes.link}>Clarity and Clearness</a>
         <Text name="clarity" value={field2} sign="/4" />
-        <Toogle name="clarity" value={field2} />
+        <Toogle name="clarity" value={field2} numberOfChildren={4} />
         <hr width="100%" />
         <a className={classes.link}>Conclusion</a>
-        <Text name="conclusion" value={field3} sign="/4" />
-        <Toogle1 name="conclusion" value={field3} />
+        <Text name="conclusion" value={field3} sign="/3" />
+        <Toogle name="conclusion" value={field3} numberOfChildren={3} />
         <hr width="100%" />
         <a className={classes.link}>Private Comments</a>
         <TextField
