@@ -14,8 +14,12 @@ import Text from "./TextField";
 import { Toogle } from "./ToogleButtonGroup";
 
 
+interface RigtPanelProp {
+  func: Function
+}
 
-const RightPane = (props) => {
+
+const RightPane = (props: RigtPanelProp) => {
   const field1 = useSelector((state) => state.field1);
   const field2 = useSelector((state) => state.field2);
   const field3 = useSelector((state) => state.field3);
@@ -23,21 +27,18 @@ const RightPane = (props) => {
   const classes = useStyles();
 
   const handleSubmit = (e) => {
-    alert("us")
-    console.log(e.target.mark)
-    // const newData = {
-    //   filePath: e.target.upload.value,
-    //   mark: e.target.mark.value,
-    //   review: e.target.review.value,
-    //   clarity: e.target.clarity.value,
-    //   conclusion: e.target.conclusion.value,
-    //   comment: e.target.comment.value,
-    // };
+    const newData = {
+      filePath: e.target.upload.value,
+      mark: e.target.mark.value,
+      review: e.target.review.value,
+      clarity: e.target.clarity.value,
+      conclusion: e.target.conclusion.value,
+      comment: e.target.comment.value,
+    };
     e.preventDefault();
-    // data.push({ newData });
+    data.push({ newData });
     alert("Data Added Succesfully!");
-    console.log(data)
-    // window.location.reload(false);
+    window.location.reload(false);
   };
 
   const fileType = ["application/pdf"];
