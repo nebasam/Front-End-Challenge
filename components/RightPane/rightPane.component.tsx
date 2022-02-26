@@ -1,18 +1,19 @@
-import React from "react";
-
-
+import Box from '@material-ui/core/Box';
 import Button from "@mui/material/Button";
+import Divider from '@mui/material/Divider';
+import Link from '@mui/material/Link';
 import TextField from "@mui/material/TextField";
+import Typography from '@mui/material/Typography';
+import React from "react";
 import { useSelector } from "react-redux";
+
 //JSON file to be written into
 import data from "../../data/data.json";
 import { useStyles } from "./rightPane";
 import Text from "./TextField";
 import { Toogle } from "./ToogleButtonGroup";
-import Divider from '@mui/material/Divider';
-import Box from '@material-ui/core/Box';
-import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
+
+
 
 const RightPane = (props) => {
   const field1 = useSelector((state) => state.field1);
@@ -22,18 +23,21 @@ const RightPane = (props) => {
   const classes = useStyles();
 
   const handleSubmit = (e) => {
-    const newData = {
-      filePath: e.target.upload.value,
-      mark: e.target.mark.value,
-      review: e.target.review.value,
-      clarity: e.target.clarity.value,
-      conclusion: e.target.conclusion.value,
-      comment: e.target.comment.value,
-    };
+    alert("us")
+    console.log(e.target.mark)
+    // const newData = {
+    //   filePath: e.target.upload.value,
+    //   mark: e.target.mark.value,
+    //   review: e.target.review.value,
+    //   clarity: e.target.clarity.value,
+    //   conclusion: e.target.conclusion.value,
+    //   comment: e.target.comment.value,
+    // };
     e.preventDefault();
-    data.push({ newData });
+    // data.push({ newData });
     alert("Data Added Succesfully!");
-    window.location.reload(false);
+    console.log(data)
+    // window.location.reload(false);
   };
 
   const fileType = ["application/pdf"];
@@ -51,8 +55,9 @@ const RightPane = (props) => {
   };
 
   return (
-    <Box className={classes.mainCont}>
-      <form onSubmit={handleSubmit}>
+  <Box className={classes.mainCont}>
+    <form onSubmit={handleSubmit}>
+      
       <Typography variant="body3"  component="h5">
           Files
       </Typography>
@@ -74,6 +79,7 @@ const RightPane = (props) => {
           Mark
         </Typography>
         <Text
+          disabled= {true}
           value={
             (((parseInt(field1) || 0) +
               (parseInt(field2) || 0) +
@@ -93,7 +99,7 @@ const RightPane = (props) => {
           Review and send
         </Link>
         
-        <Text name="send" value={field1} sign="/4" />
+        <Text   name="send" value={field1} sign="/4" />
         <Toogle name="send" value={field1} numberOfChildren={4}/>
     
         
@@ -103,7 +109,7 @@ const RightPane = (props) => {
          Clarity and Clearness
         </Link>
         
-        <Text name="clarity" value={field2} sign="/4" />
+        <Text  name="clarity" value={field2} sign="/4" />
         <Toogle name="clarity" value={field2} numberOfChildren={4} />
         
         
@@ -113,7 +119,7 @@ const RightPane = (props) => {
         <Link href="" className={classes.link}>
          Conclusion
         </Link>
-        <Text name="conclusion" value={field3} sign="/3" />
+        <Text  name="conclusion" value={field3} sign="/3" />
         <Toogle name="conclusion" value={field3} numberOfChildren={3} />
        
         
@@ -131,8 +137,7 @@ const RightPane = (props) => {
           placeholder="Add Private Comment"
         />
        
-        
-        <Button variant="contained" className={classes.submit} type="submit">
+       <Button variant="contained" className={classes.submit} type="submit">
           Post
         </Button>
       </form>

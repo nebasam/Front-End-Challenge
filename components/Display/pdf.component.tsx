@@ -6,7 +6,7 @@ import img from "../../public/assets/noFilesAttached.jpeg";
 import { useStyles } from "./pdfStyle";
 import Box from '@material-ui/core/Box';
 import Typography from '@mui/material/Typography';
-
+import Avatar from '@mui/material/Avatar';
 
 const Pdf = (props) => {
   const classes = useStyles();
@@ -37,15 +37,9 @@ const Pdf = (props) => {
         </Document>
       ) : (
         <Box className={classes.minContainer}>
+          <Avatar className={classes.img} alt="no_files_attached" src={img}  />
           
-          
-          <img
-            className={classes.img}
-            src={img}
-            alt="no_files_attached"
-            width="50%"
-            height="50%"
-          />
+        
           <Typography variant="body3"  component="p">
           No Files attached
           </Typography>

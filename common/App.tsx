@@ -14,6 +14,12 @@ import Home from "../pages/homePage/homePage.component";
 import theme from "../theme";
 import { AppToolbar } from "./AppToolbar";
 import { ErrorPage } from "./ErrorPage";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from 'react-router-dom';
 
 type AppProps = {
   history: History;
@@ -95,12 +101,12 @@ export class App extends React.Component<AppProps> {
               <CssBaseline />
               <AppToolbar onChangeTheme={this.handleChangeTheme} />
               <Toolbar />
-              {/* <Router>
+              <Router>
                 <Routes>
                   <Route exact path="/" element={<Home />}></Route>
                 </Routes>
-              </Router> */}
-              <Home />
+              </Router>
+             
               {route?.component
                 ? React.createElement(route.component, route.props)
                 : null}

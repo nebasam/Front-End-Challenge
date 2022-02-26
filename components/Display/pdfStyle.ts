@@ -15,6 +15,8 @@ const useStyles = makeStyles((theme: any) => ({
   img: {
     alignItem: "center",
     justifyContent: "center",
+    width: 100,
+    height: 100
   },
 }));
 

@@ -3874,6 +3874,7 @@ __metadata:
     react-redux: ^7.2.6
     react-refresh: ^0.10.0
     react-relay: ^11.0.2
+    react-router-dom: ^6.2.1
     react-spinners: ^0.11.0
     redux: ^4.1.2
     redux-devtools-extension: ^2.13.9
@@ -7064,6 +7065,15 @@ fsevents@^1.2.7:
   dependencies:
     "@babel/runtime": ^7.7.6
   checksum: 38a8af6f31a08ddfd6b404fa6df2fcca8bd91300aa0858bdd2bf314aca0516bd37f9835c1f628e4a9113c1be4145d8e7c58f225564d8e9708a0f49c217acb47a
+  languageName: node
+  linkType: hard
+
+"history@npm:^5.2.0":
+  version: 5.3.0
+  resolution: "history@npm:5.3.0"
+  dependencies:
+    "@babel/runtime": ^7.7.6
+  checksum: 5b53f1f59ff6106855d0fb40c865f47f00b2c0feb7336675797ffc358601e92bcc223c6af39a94a63b55f7002737096beb0078269bed55dbbc40cb10c80bc989
   languageName: node
   linkType: hard
 
@@ -10731,6 +10741,30 @@ fsevents@^1.2.7:
   peerDependencies:
     react: ^16.9.0 || ^17
   checksum: eeb60242665af3f214bffc9017e1d12c938eec1981a8019710bb0ce07b7e4233d8ee28e68c9ac765e672c01bcafdcd5f294496754d002bb5bd90053a2a68e6af
+  languageName: node
+  linkType: hard
+
+"react-router-dom@npm:^6.2.1":
+  version: 6.2.1
+  resolution: "react-router-dom@npm:6.2.1"
+  dependencies:
+    history: ^5.2.0
+    react-router: 6.2.1
+  peerDependencies:
+    react: ">=16.8"
+    react-dom: ">=16.8"
+  checksum: 32b8c97ea233eeab461ce641237d99403aea8e9623ae9bc08ca588dece0dd9f1d49fdc9791ea7ef50b023fec8a6cd5988e2511923aad4efd6df37aa1527a837f
+  languageName: node
+  linkType: hard
+
+"react-router@npm:6.2.1":
+  version: 6.2.1
+  resolution: "react-router@npm:6.2.1"
+  dependencies:
+    history: ^5.2.0
+  peerDependencies:
+    react: ">=16.8"
+  checksum: b67e73a18e56780fe3e10c1fc93b82e416f9e549afd9549ffb8a0b22b0587a9c4e8f77f380d7ee5de98a074e543917a096bd0c33eecf49ede881cb67c64ac515
   languageName: node
   linkType: hard
 
