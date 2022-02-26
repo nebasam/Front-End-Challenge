@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-
-
 import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
-import img from "../../public/assets/noFilesAttached.jpeg";
-import { useStyles } from "./pdfStyle";
 import Box from '@material-ui/core/Box';
 import Typography from '@mui/material/Typography';
 import Avatar from '@mui/material/Avatar';
+
+import img from "../../public/assets/noFilesAttached.jpeg";
+import { useStyles } from "./pdfStyle";
 
 const Pdf = (props) => {
   const classes = useStyles();
