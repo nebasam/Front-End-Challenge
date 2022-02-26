@@ -5,6 +5,8 @@ import { CssBaseline, PaletteMode, Toolbar } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/core/styles";
 import * as React from "react";
 import { Environment, RelayEnvironmentProvider } from "react-relay";
+
+
 import { History, HistoryContext, LocationContext } from "../core/history";
 import type { RouteResponse } from "../core/router";
 import { LoginDialog } from "../dialogs";
@@ -12,6 +14,12 @@ import Home from "../pages/homePage/homePage.component";
 import theme from "../theme";
 import { AppToolbar } from "./AppToolbar";
 import { ErrorPage } from "./ErrorPage";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from 'react-router-dom';
 
 type AppProps = {
   history: History;
@@ -93,7 +101,12 @@ export class App extends React.Component<AppProps> {
               <CssBaseline />
               <AppToolbar onChangeTheme={this.handleChangeTheme} />
               <Toolbar />
-              <Home />
+              <Router>
+                <Routes>
+                  <Route exact path="/" element={<Home />}></Route>
+                </Routes>
+              </Router>
+             
               {route?.component
                 ? React.createElement(route.component, route.props)
                 : null}

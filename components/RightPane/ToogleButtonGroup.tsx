@@ -1,14 +1,15 @@
+import React from "react";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
-import React from "react";
 import { useDispatch } from "react-redux";
+
 import { useStyles } from "./rightPane";
 
 export const Toogle = (props: any) => {
   const dispatch = useDispatch();
 
   const classes = useStyles();
-  let numberOfButton = Array.from(Array(props.numberOfChildren).keys())
+  const numberOfButton = Array.from(Array(props.numberOfChildren).keys())
   const children = [ 
     numberOfButton.map(num => 
     <ToggleButton
@@ -27,7 +28,7 @@ export const Toogle = (props: any) => {
       color="primary"
       value={props.value}
       exclusive
-      onChange={(event, val) => dispatch({ type: props.name, payload: val })}
+      onChange={(ev: Event, val: Number) => dispatch({ type: props.name, payload: val })}
     >
       {children}
       </ToggleButtonGroup>

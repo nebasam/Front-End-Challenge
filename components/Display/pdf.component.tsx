@@ -1,8 +1,12 @@
-// import "@react-pdf-viewer/core/lib/styles/index.css";
 import React, { useEffect, useState } from "react";
+
+
 import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
 import img from "../../public/assets/noFilesAttached.jpeg";
 import { useStyles } from "./pdfStyle";
+import Box from '@material-ui/core/Box';
+import Typography from '@mui/material/Typography';
+import Avatar from '@mui/material/Avatar';
 
 const Pdf = (props) => {
   const classes = useStyles();
@@ -24,7 +28,7 @@ const Pdf = (props) => {
   const [file, setFile] = useState(null);
 
   return (
-    <div className={classes.mainContainer}>
+    <Box className={classes.mainContainer}>
       {file ? (
         <Document file={file} onLoadSuccess={onDocumentLoadSuccess}>
           {Array.from(new Array(numPages), (el, index) => (
@@ -32,18 +36,16 @@ const Pdf = (props) => {
           ))}
         </Document>
       ) : (
-        <div className={classes.minContainer}>
-          <img
-            className={classes.img}
-            src={img}
-            alt="no_files_attached"
-            width="50%"
-            height="50%"
-          />
-          <p>No Files attached</p>
-        </div>
+        <Box className={classes.minContainer}>
+          <Avatar className={classes.img} alt="no_files_attached" src={img}  />
+          
+        
+          <Typography variant="body3"  component="p">
+          No Files attached
+          </Typography>
+        </Box>
       )}
-    </div>
+    </Box>
   );
 };
 

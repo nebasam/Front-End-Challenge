@@ -9,6 +9,7 @@ const Text = (props: any) => {
 
   return (
     <TextField
+      disabled={props.disabled}
       name={props.name}
       size="small"
       id="outlined-basic"
