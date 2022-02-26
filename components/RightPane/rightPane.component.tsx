@@ -1,11 +1,11 @@
-import Box from '@material-ui/core/Box';
+import Box from "@material-ui/core/Box";
 import Button from "@mui/material/Button";
-import Divider from '@mui/material/Divider';
-import Link from '@mui/material/Link';
+import Divider from "@mui/material/Divider";
+import Link from "@mui/material/Link";
 import TextField from "@mui/material/TextField";
-import Typography from '@mui/material/Typography';
+import Typography from "@mui/material/Typography";
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 //JSON file to be written into
 import data from "../../data/data.json";
@@ -15,29 +15,32 @@ import { Toogle } from "./ToogleButtonGroup";
 
 
 interface RigtPanelProp {
-  func: Function
+  func: Function;
 }
 
-
 const RightPane = (props: RigtPanelProp) => {
+  const dispatch = useDispatch();
+
   const field1 = useSelector((state) => state.field1);
   const field2 = useSelector((state) => state.field2);
   const field3 = useSelector((state) => state.field3);
+  const mark = useSelector((state) => state.mark);
+  const comment = useSelector((state) => state.comment);
 
   const classes = useStyles();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.changeEvent) => {
     const newData = {
-      filePath: e.target.upload.value,
-      mark: e.target.mark.value,
-      review: e.target.review.value,
-      clarity: e.target.clarity.value,
-      conclusion: e.target.conclusion.value,
-      comment: e.target.comment.value,
+      mark,
+      review: field1,
+      clarity: field2,
+      conclusion: field3,
+      comment,
     };
     e.preventDefault();
     data.push({ newData });
     alert("Data Added Succesfully!");
+    // console.log(data);
     window.location.reload(false);
   };
 
@@ -56,89 +59,75 @@ const RightPane = (props: RigtPanelProp) => {
   };
 
   return (
-  <Box className={classes.mainCont}>
-    <form onSubmit={handleSubmit}>
-      
-      <Typography variant="body3"  component="h5">
+    <Box className={classes.mainCont}>
+      <form onSubmit={handleSubmit}>
+        <Typography variant="body3" component="h5">
           Files
-      </Typography>
+        </Typography>
 
         <Link href="" className={classes.link}>
           See History
         </Link>
         <TextField
-        size="small"
-        type="file"
-        name="upload"
-        id="file-select"
-        onChange={handleFileChange}
+          size="small"
+          type="file"
+          name="upload"
+          id="file-select"
+          onChange={handleFileChange}
         />
-       
-        <Divider sx={{ marginY: "15px"}} />
-        
-        <Typography variant="body3"  component="h5">
+
+        <Divider sx={{ marginY: "15px" }} />
+
+        <Typography variant="body3" component="h5">
           Mark
         </Typography>
-        <Text
-          disabled= {true}
-          value={
-            (((parseInt(field1) || 0) +
-              (parseInt(field2) || 0) +
-              (parseInt(field3) || 0)) *
-              100) /
-            11
-          }
-          sign="/100"
-        />
-        <Divider sx={{ marginY: "15px"}} />
-       
-        <Typography variant="body3"  component="h5">
-        Rubric
+        <Text disabled={true} value={mark} sign="/100" />
+        <Divider sx={{ marginY: "15px" }} />
+
+        <Typography variant="body3" component="h5">
+          Rubric
         </Typography>
-        
-        <Link href="" className={classes.link} >
+
+        <Link href="" className={classes.link}>
           Review and send
         </Link>
-        
-        <Text   name="send" value={field1} sign="/4" />
-        <Toogle name="send" value={field1} numberOfChildren={4}/>
-    
-        
-        <Divider sx={{ marginY: "15px"}}  />
-        
+
+        <Text name="send" value={field1} sign="/4" />
+        <Toogle name="send" value={field1} numberOfChildren={4} />
+
+        <Divider sx={{ marginY: "15px" }} />
+
         <Link href="" className={classes.link}>
-         Clarity and Clearness
+          Clarity and Clearness
         </Link>
-        
-        <Text  name="clarity" value={field2} sign="/4" />
+
+        <Text name="clarity" value={field2} sign="/4" />
         <Toogle name="clarity" value={field2} numberOfChildren={4} />
-        
-        
-        
-        <Divider sx={{ marginY: "15px"}}/>
-    
+
+        <Divider sx={{ marginY: "15px" }} />
+
         <Link href="" className={classes.link}>
-         Conclusion
+          Conclusion
         </Link>
-        <Text  name="conclusion" value={field3} sign="/3" />
+        <Text name="conclusion" value={field3} sign="/3" />
         <Toogle name="conclusion" value={field3} numberOfChildren={3} />
-       
-        
-        <Divider sx={{ marginY: "15px"}}/>
-        
-        <Link  href="" className={classes.link} >
-         Private Comments
+
+        <Divider sx={{ marginY: "15px" }} />
+
+        <Link href="" className={classes.link}>
+          Private Comments
         </Link>
-  
+
         <TextField
           name="comment"
           size="small"
           multiline
           rows={2}
           placeholder="Add Private Comment"
+          onChange={(e: React.changeEvent) => dispatch({ type: 'COMMENT', payload: e.target.value })}
         />
-       
-       <Button variant="contained" className={classes.submit} type="submit">
+
+        <Button variant="contained" className={classes.submit} type="submit">
           Post
         </Button>
       </form>
