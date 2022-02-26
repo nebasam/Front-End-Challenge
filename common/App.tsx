@@ -5,6 +5,11 @@ import { CssBaseline, PaletteMode, Toolbar } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/core/styles";
 import * as React from "react";
 import { Environment, RelayEnvironmentProvider } from "react-relay";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from 'react-router-dom';
 
 
 import { History, HistoryContext, LocationContext } from "../core/history";
@@ -14,12 +19,6 @@ import Home from "../pages/homePage/homePage.component";
 import theme from "../theme";
 import { AppToolbar } from "./AppToolbar";
 import { ErrorPage } from "./ErrorPage";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link
-} from 'react-router-dom';
 
 type AppProps = {
   history: History;
